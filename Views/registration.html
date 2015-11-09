@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../Css/mainCss.css">
+  </head>
+  
+
+  <body id="bckGround">
+  <h1>Welcome to the Pompous Litte Horn's Fan Page!!!!</h1>
+  <h2>You don't have to be a fan, but you have to register to learn the secrets :)</h2>
+
+
+
+
+
+
+
+
+<h1>Register</h1>
+ <form id = "register" action="https://my-first-app87.firebaseio.com/" method="post">
+ <label for="name">Username</label><input type = "text" id="username" name="name" />
+ <label for="pwd">Password</label><input type = "password" id="pwd" name="pwd" />
+ <label for="email">E-mail</label><input type = "email" id="email" name="email" />
+ <input type="submit" id = "registerButton" value="Join Us!" />
+ </form>
+
+<script>
+ var registering = new Firebase("https://my-first-app87.firebaseio.com/");
+$('#registerButton').click(function(e) {
+  e.preventDefault();
+  var registerform = {
+username : $("#username").val(),
+ email    : $("#email").val(),
+ password : $("#pwd").val()
+
+}; 
+registering.createUser(registerform, function(error, userData) {
+  console.log(registerform);
+  if (error) {
+    console.log("Error registering user:", error);
+  };
+});
+});
+</script>
+</html>
+</body>
