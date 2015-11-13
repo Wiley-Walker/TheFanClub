@@ -43,5 +43,33 @@ registering.createUser(registerform, function(error, userData) {
 });
 });
 </script>
+
+<h1>Log-In</h1>
+ <form id = "login" action="https://my-first-app87.firebaseio.com/" method="load">
+ <label for="name">Username</label><input type = "text" id="name" name="name" />
+ <label for="pwd">Password</label><input type = "password" id="pwd" name="pwd" />
+ <label for="email">E-mail</label><input type = "email" id="email" name="email" />
+ <input type="submit" id = "loginButton" value="Login" />
+ </form>
+ <p id="print"></p>
+
+<script>
+ var loginref = new Firebase("https://my-first-app87.firebaseio.com/");
+$('#loginButton').click(function(e) {
+  e.preventDefault();
+  var loginform = {
+username : $("#name").val,
+ email    : $("#email").val(),
+ password : $("#pwd").val()
+
+}; 
+loginref.authWithPassword(loginform, function(error, userData) {
+  console.log(loginform);
+  if (error) {
+    document.getElementById("print").innerHTML = "Sorry, We Could not Find Your Account";
+};
+});
+});
+</script>
 </html>
 </body>

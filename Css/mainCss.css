@@ -1,7 +1,5 @@
 #bckGround {
 	background-color: orange;  
-	background-image: 
-	url('http://www.cyberspaceministry.org/Lessons/Future/Lesson064/eng-t01bw.gif' );
 	background-repeat: no-repeat;
 	border: 10px solid black; 
 	background-position: center; 
@@ -10,3 +8,5 @@
 #register {
 
 }
+	background-image: 
+	url('http://www.cyberspaceministry.org/Lessons/Future/Lesson064/eng-t01bw.gif' );
