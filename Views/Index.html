@@ -82,13 +82,16 @@
 
     </form>
     <!-- / LOGOUT -->
-
+    <!--BOARD_______________********************-->
+    
     <form id="frmBoard" role="form">
-    <button type="button" id="fire" >Click Me!</button>
-    	<h1 id="here">  </h1>
-
+    <label for="txtBorn">Where Was PLH Born?</label>
+     <input type="text" class="form-control" id="txtBorn" placeholder="City" name="city" />
+   
+  <input id="fire" type="submit" value="Submit">
 
     </form>
+    <h1 id="here"></h1>
     <!-- REGISTER -->
     <form id="frmRegister" role="form">
          <h2>Register</h2>
@@ -363,12 +366,17 @@
     };
     // board controller----------------------------------------------------------------
     controllers.board = function (form) {
+    	var user = rootRef.getAuth();
     	
     	$("#fire").click(function(){
-    		points = points + 1;
-    		console.log(points);
-		document.getElementById("here").innerHTML = points;
-     
+    		var born = $( "#txtBorn" ).val();
+
+    		console.log(born);
+		if (born == "Gulfport") {
+			var tell = "You got it right!!!"
+		}
+		document.getElementById("here").innerHTML = tell;
+
 });
 
     	 
